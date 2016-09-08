@@ -17,8 +17,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     let kDateKey  = "date"  // key for obtaining the data source item's date value
     
     // keep track of which rows have date cells
-    let kDateStartRow = 4
-    let kDateEndRow   = 5
+    let kDateStartRow = 1
+    let kDateEndRow   = 2
     
     let kDateCellID       = "dateCell";       // the cells with the start or end date
     let kDatePickerCellID = "datePickerCell"; // the cell containing the date picker
@@ -44,8 +44,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let itemThree = [kTitleKey : "End Date", kDateKey : NSDate()]
         let itemFour = [kTitleKey : "(other item1)"]
         let itemFive = [kTitleKey : "(other item2)"]
-        let itemSix = [kTitleKey : "(other item3)"]
-        dataArray = [itemOne, itemFour, itemFive, itemSix, itemTwo, itemThree]
+        dataArray = [itemOne, itemTwo, itemThree, itemFour, itemFive]
         
         dateFormatter.dateStyle = .MediumStyle // show short-style date format
         dateFormatter.timeStyle = .ShortStyle
@@ -294,7 +293,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBAction func doneButtonTapped(sender: AnyObject) {
         
-        let targetedCellIndexPath: NSIndexPath =  NSIndexPath(forRow: 4, inSection: 0)
+        let targetedCellIndexPath: NSIndexPath =  NSIndexPath(forRow: 2, inSection: 0)
         let cell = myTableView.cellForRowAtIndexPath(targetedCellIndexPath)
         let cellLabelText  = cell?.textLabel!.text
         let dateString = cell?.detailTextLabel!.text
